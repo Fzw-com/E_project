@@ -14,28 +14,86 @@
     }
 }
 #E_main{
-
     .E_mainl{
+        float:left;
         width:330px;
-        height:477px;
-        padding-top:340px;
-        background:url('../img/main1.jpg');
-        .f_main{
+        h3{
+            line-height:34px;
+            font-size:20px;
 
-            p{
-                text-align:center;
-                font-size:14px;
-                font-weight:600px;
-                line-height:40px;
-                span:first-child{
-                    position:relative;
-                    padding-right:30px;
-                    i{
+        }
+        .f_main{
+            padding-top:300px;
+            background-image:url('../img/main1.jpg');
+            .f_main_b{
+                height:177px;
+                background:rgba(255,255,255,0.6);
+                p{
+                    text-align:center;
+                    font-size:14px;
+                    font-weight:600px;
+                    line-height:40px;
+                    span:first-child{
+                        position:relative;
+                        padding-right:30px;
+                        i{
+                            display:inline-block;
+                            width:40px;
+                            height:40px;
+                            position:absolute;
+                            top:-20px;
+                        }
+                    }
+                }
+                ul{
+                    padding-top:10px;
+                    li{
+                        float:left;
+                        background:#fff;
+                        width:90px;
+                        line-height:24px;
+                        border-radius:5px;
+                        text-align:center;
+                        margin:5px 10px;
+                    }
+                }
+            }
+        }
+    }
+    .E_mainr{
+        float:left;
+        header{
+            width:100%;
+            float:right;
+            line-height:30px;
+            border:1px solid #ccc;
+            div{
+                float:left;
+                line-height:34px;
+                a{
+                    padding:0 10px;
+                    font-size:14px;
+                    border-right:1px solid #ccc;
+                }
+                &:last-child{
+                    a{
+                        border:0;
+                    }
+                }
+
+            }
+        }
+        .content{
+            width:100%;
+            // height:300px;
+            border:2px solid red;
+            .content_t{
+                .content_t_l{
+                    height:300px;
+                    a{
                         display:inline-block;
-                        width:40px;
-                        height:40px;
-                        position:absolute;
-                        top:-20px;
+                        height:100%;
+                        background:url('../img/index1.jpg')
                     }
                 }
             }

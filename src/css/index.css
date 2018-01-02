@@ -6,10 +6,36 @@
 
 #E_activity .E_activity_l { width: 328px; height: 420px; background: url("../img/everydayBg.png"); }
 
-#E_main .E_mainl { width: 330px; height: 477px; padding-top: 340px; background: url("../img/main1.jpg"); }
+#E_main .E_mainl { float: left; width: 330px; }
 
-#E_main .E_mainl .f_main p { text-align: center; font-size: 14px; font-weight: 600px; line-height: 40px; }
+#E_main .E_mainl h3 { line-height: 34px; font-size: 20px; }
 
-#E_main .E_mainl .f_main p span:first-child { position: relative; padding-right: 30px; }
+#E_main .E_mainl .f_main { padding-top: 300px; background-image: url("../img/main1.jpg"); }
 
-#E_main .E_mainl .f_main p span:first-child i { display: inline-block; width: 40px; height: 40px; position: absolute; top: -20px; }
+#E_main .E_mainl .f_main .f_main_b { height: 177px; background: rgba(255, 255, 255, 0.6); }
+
+#E_main .E_mainl .f_main .f_main_b p { text-align: center; font-size: 14px; font-weight: 600px; line-height: 40px; }
+
+#E_main .E_mainl .f_main .f_main_b p span:first-child { position: relative; padding-right: 30px; }
+
+#E_main .E_mainl .f_main .f_main_b p span:first-child i { display: inline-block; width: 40px; height: 40px; position: absolute; top: -20px; }
+
+#E_main .E_mainl .f_main .f_main_b ul { padding-top: 10px; }
+
+#E_main .E_mainl .f_main .f_main_b ul li { float: left; background: #fff; width: 90px; line-height: 24px; border-radius: 5px; text-align: center; margin: 5px 10px; }
+
+#E_main .E_mainr { float: left; }
+
+#E_main .E_mainr header { width: 100%; float: right; line-height: 30px; border: 1px solid #ccc; }
+
+#E_main .E_mainr header div { float: left; line-height: 34px; }
+
+#E_main .E_mainr header div a { padding: 0 10px; font-size: 14px; border-right: 1px solid #ccc; }
+
+#E_main .E_mainr header div:last-child a { border: 0; }
+
+#E_main .E_mainr .content { width: 100%; border: 2px solid red; }
+
+#E_main .E_mainr .content .content_t .content_t_l { height: 300px; }
+
+#E_main .E_mainr .content .content_t .content_t_l a { display: inline-block; height: 100%; background: url("../img/index1.jpg"); }
