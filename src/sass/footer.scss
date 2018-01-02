@@ -1,0 +1,107 @@
+#footer{
+    background:#f5f5f5;
+    .footer_t{
+        border-bottom:1px solid #ccc;
+        li{
+            float:left;
+            width:180px;
+            text-align:center;
+            a{
+                position:relative;
+            } 
+            i{
+                display:inline-block;
+                width:64px;
+                height:64px;
+                position:absolute; 
+                top:-25px;  
+            }
+            span{
+                font-size:16px;
+                display:inline-block;
+                padding-left:65px;
+                font-weight:600;
+                line-height:100px;
+            }
+            &:hover{
+                span{
+                    color:red;
+                }
+            }
+        }
+    }
+    .footer_c{ 
+        .container{
+            padding:40px 0;
+            border-bottom:1px solid #ccc;
+        }
+        .footer_cl{
+            float:left;
+            img{
+                float:left;
+                margin-right:20px;
+            }
+            .footer_cl1{
+                float:left;
+                h4{
+                    font-size:14px;
+                    line-height:30px;
+                    font-weight:600;
+                }
+                p{
+                    font-size:18px;
+                    line-height:30px;
+                    span{
+                        font-size:12px;
+                    }
+                }
+            }
+        }
+        .footer_cc{
+            float:left;
+            dl{
+                float:left;
+                padding:0 20px;
+                dt{
+                    line-height:40px;
+                    font-size:14px;
+                    font-weight:600;
+
+                }
+                dd{
+                    line-height:30px;
+                    a{
+                        font-size:14;
+                        color:#009688;
+                    }
+                }
+            }
+        }
+        .footer_cr{
+            float:right;
+            ul{
+                li{
+                    text-align:center;
+                    float:left;
+                    width:100px;
+                    margin:0 60px;
+                    
+                }
+            }
+         
+        }
+    }
+    .footer_b{
+        padding-bottom:30px;
+        p{
+            line-height:40px;
+            a{
+                padding:0 8px;
+                color:#009688;
+            }
+            &:last-child{
+                text-align:center;
+            }
+        }
+    }
+}

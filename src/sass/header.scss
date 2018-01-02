@@ -1,0 +1,192 @@
+#header{
+    .header_t{
+        background:#ddd;
+        line-height:28px;
+        border:1px solid #ddd;
+        .header_tl{
+            float:left;
+            width:50%;
+            li{
+                float:left;
+                padding: 0 6px;
+                .FW{
+                    display:inline-block;
+                    padding-left:20px;
+
+                    position:absolute;
+
+                }
+                .fw{
+                   
+                    display:inline-block;
+                    width:17px;
+                    height:17px;
+                    position:relative;
+                    top:6px;
+                }
+            }
+        }
+        .header_tr{
+            float:right;
+            width:50%;
+            padding-left:50px;
+            li{
+                float:left;
+                padding:0 10px;
+                i{
+                    padding:0 3px;
+                }
+            }
+        }
+    }
+    .header_c{
+        //line-height:130px;
+        .header_cl{
+            float:left;
+            padding-right:20px;
+        }
+        .header_cc{
+            float:left;
+            padding-top:23px;
+                input{
+                    float:left;
+                    padding-left:10px;
+                    border:2px solid red;
+                    line-height:30px;
+                    font-size:18px;
+                    width:490px;
+                }
+                button{
+                    float:left;
+                    line-height:30px;
+                    border:2px solid red;
+                    padding:0 15px;
+
+                    background:red;
+                    color:#fff;
+                } 
+                .header_cc2{
+                    line-height:36px;
+                    color:#999;
+                    a{
+                        padding:0 8px;
+                        border-right:1px solid #ddd;
+                        color:#999;
+                        &:last-child{
+                            border:0;
+                        }
+                        &:first-child{
+                            color:#f00; 
+                        }
+                        &:hover{
+                            color:#000;
+                            text-decoration:none;
+                        }
+                    }
+                }
+        }
+        .header_cr{
+            float:right;
+            margin-top:23px;
+            p{
+                background:url('../img/shopping-cart.gif')no-repeat;
+                a{
+                    float:right;
+                    padding-right:20px;
+                }
+                i{
+                    display:inline-block;
+                    line-height:40px;
+                    width:50px;
+                    height:38px;
+                    border:1px solid #ccc;
+                    border-radius:10px;
+                    
+                    font-size:20px;
+                    color:red;
+                }
+                width:130px;
+                height:40px;
+                line-height:40px;
+            }
+            .tel{
+                margin-top:5px;
+                float:left;
+                width:144px;
+                height:23px;
+
+            }
+            .cart_cr{
+                float:right;
+                margin-left:30px;
+            }
+        }
+    }
+    .header_b{ 
+        .header_bl{
+            float:left;
+            width:206px;
+            height:32px;
+            border:1px solid #ccc;
+            .header_bla{
+                display:inline-block;
+                line-height:32px;
+                font-size:16px;
+                text-align:center;
+                width:48%;
+                &:first-child{ 
+                    border-right:1px solid #ccc;
+                }
+            } 
+            .header_bl1{
+                border:1px solid #ccc;
+                width:100%;
+                padding:0 2px;
+                >li{
+                    position:relative;
+                    line-height:48px;
+                    border-bottom:1px dotted #ccc;
+                    a{
+                        display:inline-block;
+                        width:50%;
+                        text-align:center;
+                        color:#ccc;
+                        span{
+                            font-size:16px;
+                            color:#9e9e9e;
+                            padding-right:20px;
+
+                        }
+                    }
+                   .header_b1{
+                    position:absolute;
+                    left:230px;
+                    top:0;
+                   }
+                   &:last-child{
+                    a{
+                        color:red;
+                        display:inline-block;
+                        width:100%;
+                    }
+                   }
+                }
+            }  
+        }
+        
+        .header_br{
+            float:left;
+            height:32px;
+            li{
+                float:left;
+                line-height:32px;
+                padding:0 20px;
+                a{
+                    font-size:16px;
+                    font-weight:500;
+
+                }
+            }
+        }
+    }
+}
