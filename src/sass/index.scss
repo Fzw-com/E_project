@@ -23,10 +23,10 @@
 
         }
         .f_main{
-            padding-top:300px;
+            padding-top:294px;
             background-image:url('../img/main1.jpg');
             .f_main_b{
-                height:177px;
+                height:170px;
                 background:rgba(255,255,255,0.6);
                 p{
                     text-align:center;
@@ -61,17 +61,18 @@
         }
     }
     .E_mainr{
-        float:left;
+        float:right;
         header{
-            width:100%;
-            float:right;
+            // width:100%;
+            //float:right;
             line-height:30px;
+            margin-left:380px;
             border:1px solid #ccc;
             div{
                 float:left;
                 line-height:34px;
                 a{
-                    padding:0 10px;
+                    padding:0 20px;
                     font-size:14px;
                     border-right:1px solid #ccc;
                 }
@@ -84,18 +85,111 @@
             }
         }
         .content{
-            width:100%;
+            width:840px;
             // height:300px;
-            border:2px solid red;
+            border:1px solid red;
             .content_t{
+                position:relative; 
+                // height:298px;
                 .content_t_l{
-                    height:300px;
-                    a{
-                        display:inline-block;
-                        height:100%;
-                        background:url('../img/index1.jpg')
+                    float:left;
+                    width:45%;
+                    border-right:1px solid #ccc;
+                } 
+                .content_t_r{
+                    float:left;
+                    width:55%;
+                    .content_t_r_1{
+                        position:relative;
+                        &:first-child{
+                            border-bottom:1px solid #ccc;
+                        }
+                    }
+                } 
+
+                a{
+                    .content_t_lc{
+                        position:absolute;
+                        top:40px;
+                         padding-left:20px;
+                        p{
+                            font-size:14px;
+                            line-height:30px;
+                            &:last-child{
+                                color:red;
+                            }
+                        }
+                    }
+                    img{
+                        width:100%;
                     }
                 }
+            }
+            .content_b{
+                ul{
+                    li{
+                        position:relative;
+                        float:left;
+                        width:33.3%;
+                        border-right:1px solid #ccc;
+                        &:last-child{
+                            border:0;
+                        }
+                        img{
+                            width:100%;
+                        }
+                        .content_t_lc{
+                                position:absolute;
+                                top:40px;
+                                 padding-left:20px;
+                                p{
+                                    font-size:14px;
+                                    line-height:30px;
+                                    &:last-child{
+                                        color:red;
+                                    }
+                                }
+                        }
+                    }
+                }
+            }
+            >div>ul{
+                float:left;
+                li{
+                    width:25%;
+                    height:230px;
+                    padding:20px 5px;
+                    border-right:1px solid #ccc;
+                    border-bottom:1px solid #ccc;
+                    float:left;
+                    text-align:center;
+                    img{
+                        width:70%;
+                    }
+                    p{
+                        text-align:left;
+                        &:last-child{
+                            padding-top:10px;
+                            font-size:14px;
+                            color:red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .E_mainb{
+        border-top:1px solid #ccc;
+        margin-bottom:40px;
+        li{
+            float:left;
+            width:12.5%;
+            border-right:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            text-align:center;
+            padding:8px 0;
+            &:first-child{
+                border-left:1px solid #ccc;
             }
         }
     }

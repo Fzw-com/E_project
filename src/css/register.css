@@ -1,0 +1,19 @@
+#reg_header { padding: 20px; border-bottom: 1px solid #ccc; }
+
+#reg_header span:last-child { float: right; font-size: 16px; line-height: 60px; padding-right: 10px; }
+
+#reg_header span:last-child a { color: blue; }
+
+#reg_center { padding-bottom: 30px; border-bottom: 1px solid #ccc; }
+
+#reg_center .form-horizontal .form-group { margin: 30px auto; width: 600px; }
+
+#reg_center .form-horizontal .form-group .col-sm-7 .form-control { line-height: 30px !important; }
+
+#reg_center .form-horizontal:last-child .btn { width: 100%; }
+
+#reg_footer { padding-top: 50px; }
+
+#reg_footer p { text-align: center; color: #ccc; }
+
+#reg_footer p a { padding: 0 10px; border-right: 1px solid #ccc; color: #ccc; }

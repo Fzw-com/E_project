@@ -175,7 +175,7 @@
 						}else if(opt.index<0){
 							opt.index = opt.len-1;
 						}
-						this.$ul.find('li').eq(opt.index).fadeIn(800).siblings().fadeOut(1000);
+						this.$ul.find('li').eq(opt.index).fadeIn(3000).siblings().fadeOut(3000);
 						this.$page.children('span').removeClass('active');
 						this.$page.children('span').eq(opt.index).addClass('active');
 					}

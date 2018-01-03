@@ -10,9 +10,9 @@
 
 #E_main .E_mainl h3 { line-height: 34px; font-size: 20px; }
 
-#E_main .E_mainl .f_main { padding-top: 300px; background-image: url("../img/main1.jpg"); }
+#E_main .E_mainl .f_main { padding-top: 294px; background-image: url("../img/main1.jpg"); }
 
-#E_main .E_mainl .f_main .f_main_b { height: 177px; background: rgba(255, 255, 255, 0.6); }
+#E_main .E_mainl .f_main .f_main_b { height: 170px; background: rgba(255, 255, 255, 0.6); }
 
 #E_main .E_mainl .f_main .f_main_b p { text-align: center; font-size: 14px; font-weight: 600px; line-height: 40px; }
 
@@ -24,18 +24,60 @@
 
 #E_main .E_mainl .f_main .f_main_b ul li { float: left; background: #fff; width: 90px; line-height: 24px; border-radius: 5px; text-align: center; margin: 5px 10px; }
 
-#E_main .E_mainr { float: left; }
+#E_main .E_mainr { float: right; }
 
-#E_main .E_mainr header { width: 100%; float: right; line-height: 30px; border: 1px solid #ccc; }
+#E_main .E_mainr header { line-height: 30px; margin-left: 380px; border: 1px solid #ccc; }
 
 #E_main .E_mainr header div { float: left; line-height: 34px; }
 
-#E_main .E_mainr header div a { padding: 0 10px; font-size: 14px; border-right: 1px solid #ccc; }
+#E_main .E_mainr header div a { padding: 0 20px; font-size: 14px; border-right: 1px solid #ccc; }
 
 #E_main .E_mainr header div:last-child a { border: 0; }
 
-#E_main .E_mainr .content { width: 100%; border: 2px solid red; }
+#E_main .E_mainr .content { width: 840px; border: 1px solid red; }
 
-#E_main .E_mainr .content .content_t .content_t_l { height: 300px; }
+#E_main .E_mainr .content .content_t { position: relative; }
 
-#E_main .E_mainr .content .content_t .content_t_l a { display: inline-block; height: 100%; background: url("../img/index1.jpg"); }
+#E_main .E_mainr .content .content_t .content_t_l { float: left; width: 45%; border-right: 1px solid #ccc; }
+
+#E_main .E_mainr .content .content_t .content_t_r { float: left; width: 55%; }
+
+#E_main .E_mainr .content .content_t .content_t_r .content_t_r_1 { position: relative; }
+
+#E_main .E_mainr .content .content_t .content_t_r .content_t_r_1:first-child { border-bottom: 1px solid #ccc; }
+
+#E_main .E_mainr .content .content_t a .content_t_lc { position: absolute; top: 40px; padding-left: 20px; }
+
+#E_main .E_mainr .content .content_t a .content_t_lc p { font-size: 14px; line-height: 30px; }
+
+#E_main .E_mainr .content .content_t a .content_t_lc p:last-child { color: red; }
+
+#E_main .E_mainr .content .content_t a img { width: 100%; }
+
+#E_main .E_mainr .content .content_b ul li { position: relative; float: left; width: 33.3%; border-right: 1px solid #ccc; }
+
+#E_main .E_mainr .content .content_b ul li:last-child { border: 0; }
+
+#E_main .E_mainr .content .content_b ul li img { width: 100%; }
+
+#E_main .E_mainr .content .content_b ul li .content_t_lc { position: absolute; top: 40px; padding-left: 20px; }
+
+#E_main .E_mainr .content .content_b ul li .content_t_lc p { font-size: 14px; line-height: 30px; }
+
+#E_main .E_mainr .content .content_b ul li .content_t_lc p:last-child { color: red; }
+
+#E_main .E_mainr .content > div > ul { float: left; }
+
+#E_main .E_mainr .content > div > ul li { width: 25%; height: 230px; padding: 20px 5px; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; float: left; text-align: center; }
+
+#E_main .E_mainr .content > div > ul li img { width: 70%; }
+
+#E_main .E_mainr .content > div > ul li p { text-align: left; }
+
+#E_main .E_mainr .content > div > ul li p:last-child { padding-top: 10px; font-size: 14px; color: red; }
+
+#E_main .E_mainb { border-top: 1px solid #ccc; margin-bottom: 40px; }
+
+#E_main .E_mainb li { float: left; width: 12.5%; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; text-align: center; padding: 8px 0; }
+
+#E_main .E_mainb li:first-child { border-left: 1px solid #ccc; }
