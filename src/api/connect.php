@@ -4,7 +4,7 @@
 	$servername = 'localhost';
 	$username = 'root';
 	$password = '';
-	$database = 'E_project';
+	$database = 'e_project';
 
 
 	// 连接数据库

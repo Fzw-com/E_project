@@ -48,9 +48,11 @@
 
 #header .header_b .header_bl .header_bla { display: inline-block; line-height: 32px; font-size: 16px; text-align: center; width: 48%; }
 
+#header .header_b .header_bl .header_bla:hover .header_bl1 { display: block; }
+
 #header .header_b .header_bl .header_bla:first-child { border-right: 1px solid #ccc; }
 
-#header .header_b .header_bl .header_bl1 { border: 1px solid #ccc; width: 100%; padding: 0 2px; }
+#header .header_b .header_bl .header_bl1 { display: none; border: 1px solid #ccc; width: 100%; padding: 0 2px; }
 
 #header .header_b .header_bl .header_bl1 > li { position: relative; line-height: 48px; border-bottom: 1px dotted #ccc; }
 

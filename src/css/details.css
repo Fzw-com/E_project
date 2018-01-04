@@ -1,0 +1,33 @@
+#E_details .E_details_c { padding: 30px; }
+
+#E_details .E_details_c .E_details_cl { float: left; margin-right: 200px; }
+
+#E_details .E_details_c .E_details_cr { float: left; padding: 30px; background: #fcfcfc; font-size: 14px; }
+
+#E_details .E_details_c .E_details_cr h2 { font-size: 20px; font-weight: 600; }
+
+#E_details .E_details_c .E_details_cr div p { color: #ccc; line-height: 40px; }
+
+#E_details .E_details_c .E_details_cr div p:first-child span { color: #000; text-decoration: line-through; }
+
+#E_details .E_details_c .E_details_cr div p:last-child span { font-size: 24px; color: red; }
+
+#E_details .E_details_c .E_details_cr > p { line-height: 40px; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(3) { padding-bottom: 20px; border-bottom: 1px dashed #ccc; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(3) a { margin: 0 10px; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(3) a:first-child { padding: 2px 5px; background: red; color: #fff; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(3) a:last-child { color: red; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(5) span { display: inline-block; line-height: 30px; width: 30px; border: 1px solid #ccc; text-align: center; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(5) .details_sub { margin-left: 20px; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(7) { border-bottom: 1px dashed #ccc; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(8) { padding: 30px 0; }
+
+#E_details .E_details_c .E_details_cr > p:nth-child(8) button { color: #fff; font-size: 16px; background: #78b300; padding: 5px 20px; margin-right: 30px; }

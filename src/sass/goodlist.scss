@@ -1,0 +1,130 @@
+#main_list{
+    background:#f5f5f5;
+    .list_t{
+        line-height:50px;
+        span{
+            padding:10px;
+            background:#fff;
+        }
+    }
+    .list_c{
+        
+        .list_cl{
+            float:left;
+            width:20%;
+            margin-right:5%;
+            border:1px solid #ccc;
+            background:#fff;
+            h2{
+                font-size:18px;
+                text-align:center;
+                border-bottom:1px dashed #ccc;
+                line-height:40px;
+                font-weight:600;
+            }
+            .list_cla{
+                li{
+                    border-bottom:1px dashed #ccc;
+                    text-align:center;
+                    a{
+                        display:inline-block;
+                        width:100%;
+                        line-height:50px;
+                        font-size:14px;
+                        span{
+                            color:#ccc;
+                            padding-left:20px;
+                        } 
+                    }
+                }     
+            }
+
+        }
+        .list_cr{
+            width:75%;
+            float:right;
+            .list_crt{
+                border:1px solid #ccc;
+                background:#fff;
+                .list_crt1{
+                    border-bottom:1px solid #ccc;
+                    p{
+                        line-height:50px;
+                        float:left;
+                        &:first-child{
+                            span{
+                                display:inline-block;
+                                padding:0 20px; 
+                                line-height:50px;
+                                border-right:1px solid #ccc;
+                            }
+                        }
+                        &:last-child{
+                            padding-left:100px;
+                            span{
+                                padding:0 10px;
+                            }
+                            button{
+                                line-height:30px;
+                                padding:0 10px;
+                                margin-right:20px;
+                            }
+                        }
+                    }
+                }
+                .list_crt2{
+                    p{
+                        line-height:50px;
+                        padding:0 20px;
+                        span{
+                            // font-size:14px;
+                            // line-height:30px;
+                            display:inline-block;
+                            line-height:30px;
+                            margin-right:50px;
+                            &:first-child{
+                                border:1px solid #ccc; 
+                                padding:0 30px;
+                            }
+                            input{
+                                margin-bottom:6px;
+                            }
+
+                        }
+                    }
+                }
+            }
+            .list_crc{
+                margin-top:20px;
+                li{
+                    margin-right:3%;
+                    float:left;
+                    width:22%;
+                    margin-bottom:20px;
+                    background:#fff;
+                    p{
+                        width:100%;
+                        padding:10px;
+                        font-size:14px;
+                        &:nth-child(3){
+                            span:last-child{
+                                font-size:16px;
+                                color:red;
+                            }
+                            span:first-child{
+                                font-size:14px;
+                                margin-right:10px;
+                                 text-decoration:line-through;
+                            }
+                        }
+                    }
+                    img{
+                        width:100%;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

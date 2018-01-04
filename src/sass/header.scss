@@ -129,6 +129,11 @@
             height:32px;
             border:1px solid #ccc;
             .header_bla{
+                &:hover{
+                    .header_bl1{
+                        display:block;
+                    }
+                }
                 display:inline-block;
                 line-height:32px;
                 font-size:16px;
@@ -137,8 +142,10 @@
                 &:first-child{ 
                     border-right:1px solid #ccc;
                 }
+
             } 
             .header_bl1{
+                display:none;
                 border:1px solid #ccc;
                 width:100%;
                 padding:0 2px;
@@ -158,18 +165,19 @@
 
                         }
                     }
-                   .header_b1{
-                    position:absolute;
-                    left:230px;
-                    top:0;
-                   }
-                   &:last-child{
-                    a{
-                        color:red;
-                        display:inline-block;
-                        width:100%;
+                    .header_b1{
+                        position:absolute;
+                        left:230px;
+                        top:0;
                     }
-                   }
+
+                    &:last-child{
+                        a{
+                            color:red;
+                            display:inline-block;
+                            width:100%;
+                        }
+                    }
                 }
             }  
         }
