@@ -2,51 +2,58 @@
     /*
         接口：获取列表数据
      */
+    include 'connect.php';
+
+    /*-----分页--------------*/
+    $pageNo = isset($_GET['pageNo'])?$_GET['pageNo'] :'1';
+    $qty = isset($_GET['qty'])?$_GET['qty'] :'10';
+
+    /*-------查询类型-------------*/
+    $cent = isset($_GET['cent']) ? $_GET['cent'] : null;
+    $state = isset($_GET['status']) ? $_GET['status'] : null;
+    // var_dump($state);
+    /*-----------详情页---------*/
     
     $id = isset($_GET['id']) ? $_GET['id'] : null;
-    $cent = isset($_GET['cent']) ? $_GET['cent'] : null;
-    $state = isset($_GET['type']) ? $_GET['type'] : null;
 
-    // 连接数据库
-    $conn = new mysqli('localhost','root','','e_project');//得到实例对象
-
-    // 检测连接
-    if($conn->connect_errno){
-        die('连接失败'.$conn->connect_error);
-    }
-
-    // 设置编码
-    $conn->set_charset('utf8');
-
+    $sql = 'select * from goods';
 
 
     /*-------排序--------------*/
-    if($state == "true"){
-        $sql = "select * from goods where type = '$type' order by $price asc";
-    }else if($state == "false"){
-        $sql = "select * from goods where type = '$type' order by $price desc";
+    if($state == 'true'){
+        $sql .= " order by price asc";
+    }else if($state == 'false'){
+        $sql .= " order by price desc";
     }
-    // 编写sql语句
-    $sql = "select * from goods";
 
     if($id){
         $sql .= " where id='$id'";
     }
+    //var_dump($sql);
+    // 编写sql语句
+    $sql .= ' limit '. $qty*($pageNo-1) . ',' . $qty;
 
-    // 执行sql语句
-    // query()
-    // 得到一个：查询结果集
+    // 获取查询结果
     $result = $conn->query($sql);
 
-
     // 使用查询结果集
-    // 返回数组
     $row = $result->fetch_all(MYSQLI_ASSOC);
-    //释放查询结果集，避免资源浪费
+
+    //释放查询结果集
     $result->close();
-    // 把数组转换成json字符串
-    $res = json_encode($row,JSON_UNESCAPED_UNICODE);
-    echo($res);
-    // 关闭数据库，避免资源浪费
-    $conn->close(); 
+
+    // 格式化数据
+    $res = array(
+        'pageNo'=>$pageNo,
+        'qty'=>$qty,
+        'total'=>$conn->query('select count(*) from goods')->fetch_row()[0],
+        'data'=>$row,
+    );
+
+    //把结果输出到前台
+    echo json_encode($res,JSON_UNESCAPED_UNICODE);
+
+
+    //关闭连接
+    $conn->close();
 ?>

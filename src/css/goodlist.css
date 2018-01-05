@@ -24,6 +24,8 @@
 
 #main_list .list_c .list_cr .list_crt .list_crt1 p:first-child span { display: inline-block; padding: 0 15px; line-height: 50px; color: #ccc; border-right: 1px solid #ccc; }
 
+#main_list .list_c .list_cr .list_crt .list_crt1 p:first-child span:first-child { background: #53aa5b; color: #fff; }
+
 #main_list .list_c .list_cr .list_crt .list_crt1 p:first-child span:hover { background: #53aa5b; color: #fff; }
 
 #main_list .list_c .list_cr .list_crt .list_crt1 p:last-child { padding-left: 50px; }
@@ -42,12 +44,18 @@
 
 #main_list .list_c .list_cr .list_crc { margin-top: 20px; }
 
-#main_list .list_c .list_cr .list_crc li { margin-right: 3%; float: left; width: 22%; margin-bottom: 20px; background: #fff; }
+#main_list .list_c .list_cr .list_crc li { margin-right: 3%; float: left; width: 22%; padding: 3px 0; margin-bottom: 20px; background: #fff; }
 
-#main_list .list_c .list_cr .list_crc li p { width: 100%; padding: 10px; font-size: 14px; }
+#main_list .list_c .list_cr .list_crc li p { width: 100%; padding: 10px; font-size: 12px; }
 
 #main_list .list_c .list_cr .list_crc li p:nth-child(3) span:last-child { font-size: 16px; color: red; }
 
 #main_list .list_c .list_cr .list_crc li p:nth-child(3) span:first-child { font-size: 14px; margin-right: 10px; text-decoration: line-through; }
 
 #main_list .list_c .list_cr .list_crc li img { width: 100%; }
+
+#main_list .list_cb { text-align: center; }
+
+#main_list .list_cb span { border: 1px solid #ccc; margin-right: 4px; display: inline-block; width: 35px; background: #fff; line-height: 35px; }
+
+#main_list .list_cb .active { background: #53aa5b; color: #fff; }

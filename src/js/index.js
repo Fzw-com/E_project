@@ -37,35 +37,8 @@ require(['config'],function(){
                     }                             
                 }
             }, 300)          
-           
-            /*------------活动------------------------*/
-            // var $ss = $('.ss');
-            // var $min = $('.min');
-            // var timer;
-            // shijian();
-            // function shijian(){
-            //     var myDate = new Date();
-            //     var hours = myDate.getHours()
-            //     $('.time').html(hours);
-               
-            //     $min.html('');
-            //     $ss.html('');
-            //     timer =setInterval(function(){
-                   
-            //         var ss = 59-myDate.getSeconds();   
-            //         var min = 59-myDate.getMinutes();
-            //         $min.html(min);
-            //         $ss.html(ss);
-            //     },1000)
-                
-            // };
-            // setInterval(shijian, 1000);
         
-        /*
-            数码时钟
-            1）各用两张图片表示时、分、秒
-            2）每隔1秒获取当前时间并替换对应图片
-        */
+       /*--------------活动倒计时--------------------*/
     
         // 获取页面元素
         var h1 = $('#h1')[0];
@@ -84,58 +57,144 @@ require(['config'],function(){
 
         function showTime(){
             var now = new Date();
-            console.log(now)
             // 获取时分秒
             var hour = now.getHours();
-            var min = now.getMinutes();
-            console.log(min)
-            var sec = now.getSeconds();
-            console.log()
+            var min1 = now.getMinutes();
+            var sec1 = now.getSeconds();
+            var allsec= min1*60+sec1;
+            var min = Math.floor((3600-allsec)/60);
+            var sec =(3600-allsec)%60;
+            if(hour<10){
+                hour = '0' + hour +':00';
+               
+            }else{
+                // $('.time').html(`${hour}:00`);
+                hour = hour +':00';
+            }
+            $('.time').html(hour);
+            if($('.time').html()<hour){
+               $('.active_time').text('活动已结束')
+            }else{
+                $('.active_time').text('进行中')
+            }
             // 替换对应图片
             
             h1.src = "../img/time/0.png";
             h2.src = '../img/time/0.png';
 
-            m1.src = '../img/time/'+ (min/10<0 ? 0 : Math.floor(6-min/10)) +'.png';
-            m2.src = '../img/time/'+ (9-min%10) +'.png';
+            m1.src = '../img/time/'+ (min/10<0 ? 0 : Math.floor(min/10)) +'.png';
+            m2.src = '../img/time/'+ (min%10) +'.png';
 
-            s1.src = '../img/time/'+ (5-sec/10<0 ? 0 : Math.floor(6-sec/10)) +'.png';
-            s2.src = '../img/time/'+ (9-sec%10) +'.png';
-
+            s1.src = '../img/time/'+ (sec/10<0 ? 0 : Math.floor(sec/10)) +'.png';
+            s2.src = '../img/time/'+ (sec%10) +'.png';
         }
 
-            /*------------------tab切换------------*/
-            var $tab = $('.E_mainr .tab');
-            for(let i=0;i<$tab.length;i++){
+        /*--------活动栏右边--------------*/
+        var HourAll = ['00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00']
+        var $active_ul;
+        $('.E_activity_r header').html(HourAll.map(function(item){
+            $active_ul=$('<ul/>').addClass('active_ul').appendTo($('.active_content'));
+            return `<div>${item}</div>`
+        }).join(''));
 
-                (function(i){
+        var $now_hour = $('.time').html();
+        /*--------------活动tab切换----------*/
+        
+       
+        var $tab = $('.E_activity_r .tab');
+        for(let i=0;i<$tab.length;i++){
+            (function(i){
+                var $tabItem = $($tab[i]).find('header div');
+                var $tabContent =$($tab[i]).find('.active_content>ul');
+               
+                // 隐藏除第一个以外的图片
+                // $tabContent.slice(1).hide();
+                // 默认第一个高亮
+                // $tabItem.first().addClass('active');
+                var time = $('.time').text();
+                for(var ii = 0;ii<HourAll.length;ii++){
+                    if(HourAll[ii]==time){
+                            
+                        active_ajax(ii,time);
+                        $tabContent.eq(ii).show().siblings().hide();
+                        $tabItem.eq(ii).addClass('active');
+                      
+                       
+                    }
+                }
+                function active_ajax(idx,type_time){
+                    $.ajax({
+                        url:'http://localhost:1811/api/goods.php',
+                        type:'get',
+                        data:{
+                                updatetime:type_time
+                            },
+                        success:function(res){
+                            var res = JSON.parse(res);
+                            $($tabContent[idx]).html(res.map(function(item){
+                                return `<li data-id="${item.id}">
+                                            <img src="${item.imgUrl}"/>
+                                            <p>${item.details}</p>
+                                        </li>`
+                            }).join(''));
+                    
+                        }
+                    })      
+                }
+                $($tab[i]).on('mouseover','header > div',function(){
+                    // 获取当前tab
+                    // 添加高亮，出去其他高亮
+                    var $updatetime = $(this).html();
+                   
+                    $(this).addClass('active').siblings().removeClass('active');
 
-                    var $tabItem = $($tab[i]).find('header div');
-                    var $tabContent =$($tab[i]).find('.content>div');
+                    // 获取当前索引值
+                    var idx = $(this).index();
 
-                    // 隐藏除第一个以外的图片
-                    $tabContent.slice(1).hide();
-                    // 默认第一个高亮
-                    $tabItem.first().addClass('active');
+                    // 切换当前图片
+                    $tabContent.eq(idx).show().siblings().hide();
+                    active_ajax(idx,$updatetime);
+       
+                });     
+            })(i)
+        }  
+        $('.active_content').on('click','li',function(){
+            var id = $(this).attr('data-id');
+            sessionStorage.setItem('id', id);
+            location.href = './html/details.html';
+        }) 
+        /*------------------tab切换------------*/
+        var $tab = $('.E_mainr .tab');
+        for(let i=0;i<$tab.length;i++){
+            (function(i){
+
+                var $tabItem = $($tab[i]).find('header div');
+                var $tabContent =$($tab[i]).find('.content>div');
+
+                // 隐藏除第一个以外的图片
+
+                $tabContent.slice(1).hide();
+                // 默认第一个高亮
+                $tabItem.first().addClass('active');
 
 
-                    $($tab[i]).on('mouseover','header > div',function(){
-                        // 获取当前tab
-                        // 添加高亮，出去其他高亮
-                        
-                        $(this).addClass('active').siblings().removeClass('active');
+                $($tab[i]).on('mouseover','header > div',function(){
+                    // 获取当前tab
+                    // 添加高亮，出去其他高亮
+                    
+                    $(this).addClass('active').siblings().removeClass('active');
 
-                        // 获取当前索引值
-                        var idx = $(this).index();
+                    // 获取当前索引值
+                    var idx = $(this).index();
 
-                        // 切换当前图片
-                        $tabContent.eq(idx).show().siblings().hide();
+                    // 切换当前图片
+                    $tabContent.eq(idx).show().siblings().hide();
 
-                        // 动画
-                        // 滑动
-                        // $tabContent.eq(idx).slideDown().siblings().slideUp()
-                    });     
-                })(i)
-            }   
+                    // 动画
+                    // 滑动
+                    // $tabContent.eq(idx).slideDown().siblings().slideUp()
+                });     
+            })(i)
+        }   
     })
 })

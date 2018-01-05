@@ -7,8 +7,7 @@
             background:#fff;
         }
     }
-    .list_c{
-        
+    .list_c{  
         .list_cl{
             float:left;
             width:20%;
@@ -53,6 +52,10 @@
                         float:left;
                         &:first-child{
                             span{
+                                &:first-child{
+                                    background:#53aa5b;
+                                    color:#fff;
+                                }
                                 display:inline-block;
                                 padding:0 15px; 
                                 line-height:50px;
@@ -82,8 +85,6 @@
                         line-height:50px;
                         padding:0 20px;
                         span{
-                            // font-size:14px;
-                            // line-height:30px;
                             display:inline-block;
                             line-height:30px;
                             margin-right:50px;
@@ -105,12 +106,13 @@
                     margin-right:3%;
                     float:left;
                     width:22%;
+                    padding:3px 0;
                     margin-bottom:20px;
                     background:#fff;
                     p{
                         width:100%;
                         padding:10px;
-                        font-size:14px;
+                        font-size:12px;
                         &:nth-child(3){
                             span:last-child{
                                 font-size:16px;
@@ -119,7 +121,7 @@
                             span:first-child{
                                 font-size:14px;
                                 margin-right:10px;
-                                 text-decoration:line-through;
+                                text-decoration:line-through;
                             }
                         }
                     }
@@ -129,6 +131,22 @@
                 }
             }
 
+        }
+    }
+    .list_cb{
+        text-align:center;
+        span{
+            border:1px solid #ccc;
+            margin-right:4px;
+            display:inline-block;
+            width:35px;
+            background:#fff;
+           
+            line-height:35px;
+        }
+        .active{
+            background:#53aa5b;
+            color:#fff;
         }
     }
 

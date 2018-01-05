@@ -14,7 +14,7 @@ require(['config'],function(){
             type:'get',
             success:function(res){
                 var res = JSON.parse(res);
-                res.map(function(item){
+                res.data.map(function(item){
 
                     $('.E_details_clb').html(`<img src="${item.imgUrl}" data-big="${item.imgUrl}">`);
                     var cc = item.imgUrls.split(',');

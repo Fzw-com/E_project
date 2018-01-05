@@ -10,7 +10,99 @@
     .E_activity_l{
         width:328px;
         height:420px;
+        margin-top:20;
+        float:left;
         background:url('../img/everydayBg.png');
+        padding-top:200px;
+        .E_activity_time{
+            text-align:center;
+            p{
+                color:#fff;
+                line-height:30px;
+                font-size:16px;
+                .time{
+                    padding:0 10px;
+                    font-size:24px;
+                }
+                .active_time{
+                    display:inline-block;
+                    width:61px;
+                    height:26px;
+                    color:red;
+                    text-align:center;
+                    line-height:26px;
+                    font-size:12px;
+                }
+                &:nth-child(2){
+                    line-height:40px;
+                }
+                
+            }
+            >ul{
+                margin-top:40px;
+                width:80%;
+                margin-left:10%;
+                li{
+                    width:100%;
+                    border-radius:20px;
+                    font-size:12px;
+                    line-height:30px;
+                    
+                    background:red;
+                    color:#fff;
+                    
+                }
+            }
+            .clock{
+                img{
+                    width:25px;
+                }
+                font-size:26px;
+                font-weight:600;
+                color:#fff;
+                #h2,#m2{
+                    margin-right:10px;
+                }
+            }
+        }
+    }
+    .E_activity_r{
+        border:1px solid #ccc;
+        padding:0 20px;
+        overflow:hidden;
+        float:left;
+        .tab{
+            width:800px;
+        }
+        .tab header{
+            width:2400px;
+            >div{
+                width:100px;
+                text-align:center;
+                float:left;
+                font-size:16px;
+                line-height:40px;
+                border-bottom:1px dashed #ccc;
+            }
+        }
+        .active_content{
+            width:100%;
+            height:377px;
+            overflow:hidden;
+            .active_ul{
+                height:100%;
+                li{
+                    float:left;
+                    height:100%;
+                    padding-top:40px;
+                    width:20%;
+                    margin-right:5%;
+                    img{
+                        width:100%;
+                    }
+                }
+            }
+        }
     }
 }
 #E_main{
@@ -193,4 +285,8 @@
             }
         }
     }
+}
+.active{
+    background:#53aa5b;
+    color:#fff;
 }

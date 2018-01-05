@@ -8,11 +8,11 @@ require(['config'],function(){
                 'display':'block'
             })
         })
-        $two_a.on('mouseout',function(){
-            $('.header_bl1').css({
-                'display':'none'
-            })
-        })
+        // $two_a.on('mouseout',function(){
+        //     $('.header_bl1').css({
+        //         'display':'none'
+        //     })
+        // })
     })
 })
 
