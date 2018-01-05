@@ -16,56 +16,94 @@ require(['config'],function(){
                 type:'fade'
 
             })
-            /*----背景颜色----------*/
-                // $('.f_carousel').css({
-                //    'margin':'auto'
-
-                // })
-               
-                // for(var i = 0; i<background_Color.length;i++){
-
-                // }
-                setInterval(function(){
-                    var ii = $('#E_carousel').find('span');
-                    // var img =  $('#E_carousel').find('img')  
-                    
-                    for(var i = 0;i<ii.length;i++){
-                       if($(ii[i]).attr('class')=='active'){
-                           /* console.log($('#E_carousel'))*/
-                            var attr = 'opacity';
-                            var property = {}
-                            property[attr] = 0.2;
-                            $('#E_carousel').animate({
-                              
-                                property,
-                               'background-color':background_Color[i]
-
-                            },3000)
-                       }
-                                             
-                    }
-                }, 3000)
-             
-               
-                // $('#E_carousel').on('mouseover','img',function(){
-                //     var ind = ($(this).parent().index());
-                //     console.log(ind)
-                //      $('#E_carousel').css({
-                //         'height':'351'
-                //      })
-                //     $('#E_carousel').animate({
-                //         'background-color':background_Color[ind]
-
-                //     })
-                //     console.log(background_Color[ind])
-                // })
-                $('.f_carousel').css({
+            $('.f_carousel').css({
                    'margin':'auto'
 
-                })
-            
+            })
+            $('#E_carousel').css({
+                'height':'351'
+            })
+            /*----背景颜色----------*/
+            setInterval(function(){
+                var ii = $('#E_carousel').find('span');
+                // var img =  $('#E_carousel').find('img')  
+                
+                for(var i = 0;i<ii.length;i++){
+                    if($(ii[i]).attr('class')=='active'){
+                        //console.log($('#E_carousel'))
+                        $('#E_carousel').css({
+                                'background-color':background_Color[i]
+                        }).fadeIn(900000)
+                    }                             
+                }
+            }, 300)          
            
             /*------------活动------------------------*/
+            // var $ss = $('.ss');
+            // var $min = $('.min');
+            // var timer;
+            // shijian();
+            // function shijian(){
+            //     var myDate = new Date();
+            //     var hours = myDate.getHours()
+            //     $('.time').html(hours);
+               
+            //     $min.html('');
+            //     $ss.html('');
+            //     timer =setInterval(function(){
+                   
+            //         var ss = 59-myDate.getSeconds();   
+            //         var min = 59-myDate.getMinutes();
+            //         $min.html(min);
+            //         $ss.html(ss);
+            //     },1000)
+                
+            // };
+            // setInterval(shijian, 1000);
+        
+        /*
+            数码时钟
+            1）各用两张图片表示时、分、秒
+            2）每隔1秒获取当前时间并替换对应图片
+        */
+    
+        // 获取页面元素
+        var h1 = $('#h1')[0];
+        var h2 = $('#h2')[0];
+        var m1 = $('#m1')[0];
+        var m2 = $('#m2')[0];
+        var s1 = $('#s1')[0];
+        var s2 = $('#s2')[0];
+
+        
+        showTime();
+
+
+        // 2）每隔1秒获取当前时间并替换对应图片
+        setInterval(showTime,1000);
+
+        function showTime(){
+            var now = new Date();
+            console.log(now)
+            // 获取时分秒
+            var hour = now.getHours();
+            var min = now.getMinutes();
+            console.log(min)
+            var sec = now.getSeconds();
+            console.log()
+            // 替换对应图片
+            
+            h1.src = "../img/time/0.png";
+            h2.src = '../img/time/0.png';
+
+            m1.src = '../img/time/'+ (min/10<0 ? 0 : Math.floor(6-min/10)) +'.png';
+            m2.src = '../img/time/'+ (9-min%10) +'.png';
+
+            s1.src = '../img/time/'+ (5-sec/10<0 ? 0 : Math.floor(6-sec/10)) +'.png';
+            s2.src = '../img/time/'+ (9-sec%10) +'.png';
+
+        }
+
             /*------------------tab切换------------*/
             var $tab = $('.E_mainr .tab');
             for(let i=0;i<$tab.length;i++){

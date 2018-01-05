@@ -6,11 +6,13 @@
 
 #reg_center { padding-bottom: 30px; border-bottom: 1px solid #ccc; }
 
-#reg_center .form-horizontal .form-group { margin: 30px auto; width: 600px; }
+#reg_center .form-horizontal .form-group { margin: 30px auto; width: 700px; }
 
 #reg_center .form-horizontal .form-group .col-sm-7 .form-control { line-height: 30px !important; }
 
-#reg_center .form-horizontal:last-child .btn { width: 100%; }
+#reg_center .form-horizontal .form-group span { display: line-block; height: 30px; line-height: 30px; color: red; font-size: 14px; }
+
+#reg_center .form-horizontal .form-group:nth-child(7) .btn-lg { width: 100%; }
 
 #reg_footer { padding-top: 50px; }
 

@@ -1,6 +1,14 @@
 #E_details .E_details_c { padding: 30px; }
 
-#E_details .E_details_c .E_details_cl { float: left; margin-right: 200px; }
+#E_details .E_details_c .E_details_cl { float: left; width: 30%; margin-right: 5%; }
+
+#E_details .E_details_c .E_details_cl .E_details_clb { text-align: center; }
+
+#E_details .E_details_c .E_details_cl .E_details_clt { padding: 20px 10px 20px 0; }
+
+#E_details .E_details_c .E_details_cl .E_details_clt li { float: left; padding: 10px 2px; text-align: center; width: 20%; margin-right: 1%; }
+
+#E_details .E_details_c .E_details_cl .E_details_clt li img { width: 100%; }
 
 #E_details .E_details_c .E_details_cr { float: left; padding: 30px; background: #fcfcfc; font-size: 14px; }
 

@@ -54,13 +54,18 @@
                         &:first-child{
                             span{
                                 display:inline-block;
-                                padding:0 20px; 
+                                padding:0 15px; 
                                 line-height:50px;
+                                color:#ccc;
                                 border-right:1px solid #ccc;
+                                &:hover{
+                                    background:#53aa5b;
+                                    color:#fff;
+                                }
                             }
                         }
                         &:last-child{
-                            padding-left:100px;
+                            padding-left:50px;
                             span{
                                 padding:0 10px;
                             }

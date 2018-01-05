@@ -4,7 +4,9 @@
      */
     
     $id = isset($_GET['id']) ? $_GET['id'] : null;
-    
+    $cent = isset($_GET['cent']) ? $_GET['cent'] : null;
+    $state = isset($_GET['type']) ? $_GET['type'] : null;
+
     // 连接数据库
     $conn = new mysqli('localhost','root','','e_project');//得到实例对象
 
@@ -16,6 +18,14 @@
     // 设置编码
     $conn->set_charset('utf8');
 
+
+
+    /*-------排序--------------*/
+    if($state == "true"){
+        $sql = "select * from goods where type = '$type' order by $price asc";
+    }else if($state == "false"){
+        $sql = "select * from goods where type = '$type' order by $price desc";
+    }
     // 编写sql语句
     $sql = "select * from goods";
 

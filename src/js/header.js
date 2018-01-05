@@ -4,6 +4,7 @@ require(['config'],function(){
         var $two_a = $($('.header_bla')[1]);
         $two_a.on('mouseover',function(){
             $('.header_bl1').css({
+                'background':'#ccc',
                 'display':'block'
             })
         })

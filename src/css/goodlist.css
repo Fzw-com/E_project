@@ -22,9 +22,11 @@
 
 #main_list .list_c .list_cr .list_crt .list_crt1 p { line-height: 50px; float: left; }
 
-#main_list .list_c .list_cr .list_crt .list_crt1 p:first-child span { display: inline-block; padding: 0 20px; line-height: 50px; border-right: 1px solid #ccc; }
+#main_list .list_c .list_cr .list_crt .list_crt1 p:first-child span { display: inline-block; padding: 0 15px; line-height: 50px; color: #ccc; border-right: 1px solid #ccc; }
 
-#main_list .list_c .list_cr .list_crt .list_crt1 p:last-child { padding-left: 100px; }
+#main_list .list_c .list_cr .list_crt .list_crt1 p:first-child span:hover { background: #53aa5b; color: #fff; }
+
+#main_list .list_c .list_cr .list_crt .list_crt1 p:last-child { padding-left: 50px; }
 
 #main_list .list_c .list_cr .list_crt .list_crt1 p:last-child span { padding: 0 10px; }
 
