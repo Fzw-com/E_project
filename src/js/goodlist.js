@@ -8,7 +8,7 @@ require(['config'],function(){
         var pageNo = 1;
         var qty = 10;
         /*------点击排序-------------*/
-       
+        
         var first_p = $('.list_crt1').children()[0];
         var status = true;
         $(first_p).on('click','span',function(){
@@ -35,6 +35,7 @@ require(['config'],function(){
                 },
                 success:function(res){
                     var res = JSON.parse(res);
+                    console.log(res)
                     $list_crc.html(res.data.map(function(item){
                         return `<li data-id="${item.id}">
                                     <img src="${item.imgUrl}">
@@ -66,8 +67,9 @@ require(['config'],function(){
         })
         $list_crc.on('click','li',function(){
             var $good_id = $(this).attr('data-id');
-            location.href='../html/details.html?id='+$good_id;
             sessionStorage.setItem('id', $good_id);
+            location.href='../html/details.html?id='+$good_id;
+           
            
         })
 

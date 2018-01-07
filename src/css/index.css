@@ -1,10 +1,14 @@
-#E_carousel { width: 100%; height: 360px; }
+body, html { width: 100%; }
 
-#E_carousel img { width: 100%; }
+#E_carousel { width: 100%; height: 36px; }
+
+#E_carousel ul li { width: 100%; }
+
+#E_carousel ul li img { width: 760px; }
 
 #E_activity { margin: 50px 0; }
 
-#E_activity .E_activity_l { width: 328px; height: 420px; margin-top: 20; float: left; background: url("../img/everydayBg.png"); padding-top: 200px; }
+#E_activity .E_activity_l { width: 328px; height: 420px; float: left; background: url("../img/everydayBg.png"); padding-top: 200px; }
 
 #E_activity .E_activity_l .E_activity_time { text-align: center; }
 
@@ -26,21 +30,27 @@
 
 #E_activity .E_activity_l .E_activity_time .clock #h2, #E_activity .E_activity_l .E_activity_time .clock #m2 { margin-right: 10px; }
 
-#E_activity .E_activity_r { border: 1px solid #ccc; padding: 0 20px; overflow: hidden; float: left; }
+#E_activity .E_activity_r { border: 1px solid #ccc; width: 840px; overflow: hidden; float: left; }
 
-#E_activity .E_activity_r .tab { width: 800px; }
+#E_activity .E_activity_r .tab .tab_t { padding: 0 20px; height: 40px; overflow: hidden; border-bottom: 1px dashed #ccc; position: relative; }
 
-#E_activity .E_activity_r .tab header { width: 2400px; }
+#E_activity .E_activity_r .tab .tab_t span { position: absolute; height: 40px; width: 20px; padding: 1px; line-height: 40px; font-size: 18px; top: 50%; left: 0px; transform: translateY(-50%); background-color: #ccc; color: #fff; }
 
-#E_activity .E_activity_r .tab header > div { width: 100px; text-align: center; float: left; font-size: 16px; line-height: 40px; border-bottom: 1px dashed #ccc; }
+#E_activity .E_activity_r .tab .tab_t .right_btn { left: auto; right: 0px; }
 
-#E_activity .E_activity_r .active_content { width: 100%; height: 377px; overflow: hidden; }
+#E_activity .E_activity_r .tab header { position: absolute; }
+
+#E_activity .E_activity_r .tab header > div { width: 100px; text-align: center; float: left; font-size: 16px; line-height: 40px; }
+
+#E_activity .E_activity_r .active_content { padding: 0px 10px; width: 100%; height: 377px; overflow: hidden; }
 
 #E_activity .E_activity_r .active_content .active_ul { height: 100%; }
 
-#E_activity .E_activity_r .active_content .active_ul li { float: left; height: 100%; padding-top: 40px; width: 20%; margin-right: 5%; }
+#E_activity .E_activity_r .active_content .active_ul li { float: left; height: 100%; padding-top: 80px; width: 20%; margin-right: 5%; }
 
 #E_activity .E_activity_r .active_content .active_ul li img { width: 100%; }
+
+#E_activity .E_activity_r .active_content .active_ul li:hover > img { border: 1px solid red; }
 
 #E_main .E_mainl { float: left; width: 330px; }
 

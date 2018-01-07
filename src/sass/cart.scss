@@ -1,0 +1,50 @@
+#E_cart{
+    padding:20px;
+    .carList{
+        width:100%;
+        padding:10px;
+        border:1px solid#ccc;   
+        thead{
+            border-bottom:1px solid#ccc;
+        }
+        tbody{
+            tr{
+                padding:10pxpx;
+            }
+            td>img{
+                width:100px;
+                height:100px;
+                border:1px solid#ccc;
+            }
+        }
+        th,td{
+            padding:30px;
+            text-align:center;
+        }
+        .car_sl{
+            >span{
+                border:1px solid#ccc;
+                padding:2px;
+                font-size:16px;
+            }
+        }
+    }
+    .last_total,.car_clear{
+        padding-right:100px;    
+        line-height:30px;
+        font-size:16px;
+        color:red;
+        text-align:right;
+        .all_total{
+            float:right;
+        }
+    }
+    .car_clear{
+        button{
+            color:#fff;
+            padding:3px 6px;
+            text-align:center;
+            background:red;
+        }
+    }
+}

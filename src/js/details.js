@@ -8,6 +8,12 @@ require(['config'],function(){
 
         /*----获取id，生成商品详情页-------------*/
         var id = window.sessionStorage.getItem('id');
+        var $userName = window.sessionStorage.getItem('username');
+        console.log($userName);
+        if(id==null){
+            var params = location.search;
+            id = params.slice(4);
+        }
         $.ajax({
             url:"http://localhost:1811/api/goods.php",
             data:{'id':id},
@@ -33,13 +39,13 @@ require(['config'],function(){
                             <a>正在清仓点击参与››</a>
                         </p>
                         <p>已售：<span>${item.saleQty}袋</span></p>
-                        <p class="buy_details" onselectstart="return false;" >我要买:<span class="details_sub">-</span><span class="details_qty">2</span><span class="details_add">+</span>袋</p>
+                        <p class="buy_details" onselectstart="return false;" >我要买:<span class="details_sub">-</span><span class="details_qty">1</span><span class="details_add">+</span>袋</p>
                         <p>送货至:<span>重庆</span></p>
 
                         <p>E宠快递15点前下单，其他快递16点前下单，当天发货。 <a>运费详情>></a>
                         </p>
                         <p><button class="btn_cart">加入购物车</button><a><i></i>咨询</a></p>
-                    `)
+                        `)
 
                     /*-----------放大镜----------------------------------*/
                     $('.E_details_clb').gdsZoom({
@@ -55,6 +61,7 @@ require(['config'],function(){
 
                     /*------------------点击加减-------------*/
                     var $qty=$('.details_qty').text();
+                   
                     $('.buy_details').on('click','.details_add',function(event){
                         event.preventDefault();
                         $qty++;
@@ -68,18 +75,31 @@ require(['config'],function(){
                         }
                         $('.details_qty').html($qty);
                     })
-                    
+                   
+                   
                     /*------------------点击加入购物车-------------*/
+                        /*----将qty转为id---*/
+                    console.log($userName);
+                    var idArr=[];
                     $('.btn_cart').on('click',function(){
+                        idArr=[];
+    
+                        for(var i=0;i<$qty;i++){
+
+                            idArr.push(id);
+                        }
+                      
+                        var idAll=idArr.join(',');
+                        
                         $.ajax({
-                            url:'http://localhost:1811/api/cart.php',
+                            url:'../api/cart.php',
                             data:{
-                                id:id,
-                                qty:$qty
+                                username:$userName,
+                                id:idAll
                             },
                             type:'get',
                             success:function(res){
-
+                                location.href="../html/cart.html"
                             }
                         })
                     })
@@ -89,15 +109,5 @@ require(['config'],function(){
                 })
             }
         })
-
-        // /*---点击加入购物车------------*/
-        // var $datalist=Cookie.get('$datalist');
-        // console.log($datalist);
-        // if(!$datalist){
-        //     $datalist=[];
-        //     console.log($datalist);
-        // }else{
-        //     $datalist=JSON.parse($datalist);
-        // }
     })
 })

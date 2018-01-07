@@ -35,9 +35,6 @@
 				width:opt.width,
 				height:opt.height
 			})
-		
-			
-
 			var lx = {
 				init:function(){
 					opt.len = opt.imgs.length;
@@ -64,10 +61,10 @@
 						$self.append(this.$page);
 						this.$page.find('span').eq(opt.index).addClass('active');
 					}
-					this.$ul.find('img').css({
-						width:opt.width,
-						height:opt.height
-					})
+					// this.$ul.find('img').css({
+					// 	width:opt.width,
+					// 	height:opt.height
+					// })
 
 					//轮播类型
 					if(opt.type === 'horizontal'){

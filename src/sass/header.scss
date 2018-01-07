@@ -5,7 +5,7 @@
         border:1px solid #ddd;
         .header_tl{
             float:left;
-            width:50%;
+            width:40%;
             li{
                 float:left;
                 padding: 0 6px;
@@ -14,7 +14,6 @@
                     padding-left:20px;
 
                     position:absolute;
-
                 }
                 .fw{
                    
@@ -28,8 +27,8 @@
         }
         .header_tr{
             float:right;
-            width:50%;
-            padding-left:50px;
+            width:60%;
+            position:relative;
             li{
                 float:left;
                 padding:0 10px;
@@ -37,10 +36,22 @@
                     padding:0 3px;
                 }
             }
+            >span{
+                padding-left:10px;
+                .user_Name{
+                    font-size:16px;
+                    padding-left:10px;
+                    color:red;
+                }
+            }
+            .clone_deng{
+                position:absolute;
+                right:0;
+                font-size:14px;
+            }
         }
     }
     .header_c{
-        //line-height:130px;
         .header_cl{
             float:left;
             padding-right:20px;
@@ -141,10 +152,11 @@
 
             } 
             .header_bl1{
-               // display:none;
+                display:none;
                 position:absolute;
                 top:33px;
                 left:0;
+                background:#fff;
                 width:202px;
                 border:1px solid #ccc;
                 padding:0 2px;
@@ -170,7 +182,6 @@
                     &:last-child{
                         a{
                             color:red;
-
                             display:inline-block;
                             width:100%;
                         }

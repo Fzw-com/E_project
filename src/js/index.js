@@ -7,36 +7,23 @@ require(['config'],function(){
             $('#E_footer').load('../html/footer.html'); 
             //轮播图
             var background_Color=['#FE5433','#045F60','#EEEEEE','#FFEB04','#EF363B','#509D39'];
-            $('.f_carousel').lxCarousel({
+            $('#E_carousel').lxCarousel({
 
                 imgs:['../img/Carousel/1.jpg','../img/Carousel/2.jpg','../img/Carousel/3.jpg','../img/Carousel/4.jpg','../img/Carousel/5.jpg','../img/Carousel/6.png'],
-                width:'760',
-                height:'351',
+                width:'100%',
+                height:'360',
                 page:true,
                 type:'fade'
 
             })
-            $('.f_carousel').css({
-                   'margin':'auto'
+            var curront_li=$('#E_carousel').find('li');
+            for(var i=0;i<curront_li.length;i++){
+                $(curront_li[i]).css({"background-color":background_Color[i]})
+            }
 
+            $('#E_carousel img').css({
+                'margin':'auto'
             })
-            $('#E_carousel').css({
-                'height':'351'
-            })
-            /*----背景颜色----------*/
-            setInterval(function(){
-                var ii = $('#E_carousel').find('span');
-                // var img =  $('#E_carousel').find('img')  
-                
-                for(var i = 0;i<ii.length;i++){
-                    if($(ii[i]).attr('class')=='active'){
-                        //console.log($('#E_carousel'))
-                        $('#E_carousel').css({
-                                'background-color':background_Color[i]
-                        }).fadeIn(900000)
-                    }                             
-                }
-            }, 300)          
         
        /*--------------活动倒计时--------------------*/
     
@@ -98,28 +85,79 @@ require(['config'],function(){
         }).join(''));
 
         var $now_hour = $('.time').html();
+        var $headerDiv = $('.E_activity_r header div');
+     
+        $('.E_activity_r header').css({
+            'width':$headerDiv.first().outerWidth(true)*$headerDiv.length
+        })
+        var $tab_tHeader=$('.tab_t header');
+      
         /*--------------活动tab切换----------*/
         
        
         var $tab = $('.E_activity_r .tab');
+        console.log($tab)
         for(let i=0;i<$tab.length;i++){
+
             (function(i){
                 var $tabItem = $($tab[i]).find('header div');
                 var $tabContent =$($tab[i]).find('.active_content>ul');
-               
-                // 隐藏除第一个以外的图片
-                // $tabContent.slice(1).hide();
-                // 默认第一个高亮
-                // $tabItem.first().addClass('active');
                 var time = $('.time').text();
-                for(var ii = 0;ii<HourAll.length;ii++){
+                for(let ii = 0;ii<HourAll.length;ii++){
                     if(HourAll[ii]==time){
-                            
                         active_ajax(ii,time);
                         $tabContent.eq(ii).show().siblings().hide();
                         $tabItem.eq(ii).addClass('active');
-                      
-                       
+                        if(ii>=16){  
+                            $tab_tHeader.css({
+                                left:-$headerDiv.first().outerWidth()*16
+                            })
+                        }else{
+                            $tab_tHeader.css({
+                                left:-$headerDiv.first().outerWidth()*ii+1
+                            })
+                        }
+                        /*----点击------------*/
+                        $('.left_btn').on('click',function(){
+                            ii--;
+                            console.log(ii)
+                            if(ii>16){
+                                ii=15;  
+                                $tab_tHeader.animate({
+                                    left:-$headerDiv.first().outerWidth()*ii
+                                },500)
+                            }else if(ii<=0){
+                                ii=0;
+                                $tab_tHeader.animate({
+                                    left:0
+                                },500)
+
+                            }else{
+                                $tab_tHeader.animate({
+                                    left:-$headerDiv.first().outerWidth()*ii
+                                },500)
+                            }
+                        })
+
+                        $('.right_btn').on('click',function(){
+                            ii++;
+                            if(ii>=16){  
+                                $tab_tHeader.animate({
+                                    left:-$headerDiv.first().outerWidth()*16
+                                },500)
+                            }else if(ii<0){
+                                
+                                $tab_tHeader.animate({
+                                    left:0
+                                },500)
+                                ii=0
+                            }else{
+                                $tab_tHeader.animate({
+                                    left:-$headerDiv.first().outerWidth()*ii
+                                },500)
+                                
+                            }
+                        })   
                     }
                 }
                 function active_ajax(idx,type_time){
@@ -131,7 +169,8 @@ require(['config'],function(){
                             },
                         success:function(res){
                             var res = JSON.parse(res);
-                            $($tabContent[idx]).html(res.map(function(item){
+                            $($tabContent[idx]).html(res.data.map(function(item){
+                                // console.log(item)
                                 return `<li data-id="${item.id}">
                                             <img src="${item.imgUrl}"/>
                                             <p>${item.details}</p>
@@ -141,7 +180,8 @@ require(['config'],function(){
                         }
                     })      
                 }
-                $($tab[i]).on('mouseover','header > div',function(){
+                $('.tab_t header').on('mouseover','div',function(){
+                    console.log(99)
                     // 获取当前tab
                     // 添加高亮，出去其他高亮
                     var $updatetime = $(this).html();
@@ -152,16 +192,18 @@ require(['config'],function(){
                     var idx = $(this).index();
 
                     // 切换当前图片
-                    $tabContent.eq(idx).show().siblings().hide();
+                    $tabContent.eq(idx).fadeIn(300).siblings().fadeOut(300);
                     active_ajax(idx,$updatetime);
        
                 });     
             })(i)
         }  
         $('.active_content').on('click','li',function(){
-            var id = $(this).attr('data-id');
-            sessionStorage.setItem('id', id);
-            location.href = './html/details.html';
+            
+            var $good_id = $(this).attr('data-id');
+            sessionStorage.setItem('id', $good_id);
+            location.href='../html/details.html?id='+$good_id;
+           
         }) 
         /*------------------tab切换------------*/
         var $tab = $('.E_mainr .tab');

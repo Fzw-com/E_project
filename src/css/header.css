@@ -1,6 +1,6 @@
 #header .header_t { background: #ddd; line-height: 28px; border: 1px solid #ddd; }
 
-#header .header_t .header_tl { float: left; width: 50%; }
+#header .header_t .header_tl { float: left; width: 40%; }
 
 #header .header_t .header_tl li { float: left; padding: 0 6px; }
 
@@ -8,11 +8,17 @@
 
 #header .header_t .header_tl li .fw { display: inline-block; width: 17px; height: 17px; position: relative; top: 6px; }
 
-#header .header_t .header_tr { float: right; width: 50%; padding-left: 50px; }
+#header .header_t .header_tr { float: right; width: 60%; position: relative; }
 
 #header .header_t .header_tr li { float: left; padding: 0 10px; }
 
 #header .header_t .header_tr li i { padding: 0 3px; }
+
+#header .header_t .header_tr > span { padding-left: 10px; }
+
+#header .header_t .header_tr > span .user_Name { font-size: 16px; padding-left: 10px; color: red; }
+
+#header .header_t .header_tr .clone_deng { position: absolute; right: 0; font-size: 14px; }
 
 #header .header_c .header_cl { float: left; padding-right: 20px; }
 
@@ -50,7 +56,7 @@
 
 #header .header_b .header_bl .header_bla:first-child { border-right: 1px solid #ccc; }
 
-#header .header_b .header_bl .header_bl1 { position: absolute; top: 33px; left: 0; width: 202px; border: 1px solid #ccc; padding: 0 2px; }
+#header .header_b .header_bl .header_bl1 { display: none; position: absolute; top: 33px; left: 0; background: #fff; width: 202px; border: 1px solid #ccc; padding: 0 2px; }
 
 #header .header_b .header_bl .header_bl1 li { position: relative; line-height: 48px; border-bottom: 1px dotted #ccc; }
 

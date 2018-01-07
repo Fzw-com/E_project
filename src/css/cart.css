@@ -1,0 +1,19 @@
+#E_cart { padding: 20px; }
+
+#E_cart .carList { width: 100%; padding: 10px; border: 1px solid #ccc; }
+
+#E_cart .carList thead { border-bottom: 1px solid #ccc; }
+
+#E_cart .carList tbody tr { padding: 10pxpx; }
+
+#E_cart .carList tbody td > img { width: 100px; height: 100px; border: 1px solid #ccc; }
+
+#E_cart .carList th, #E_cart .carList td { padding: 30px; text-align: center; }
+
+#E_cart .carList .car_sl > span { border: 1px solid #ccc; padding: 2px; font-size: 16px; }
+
+#E_cart .last_total, #E_cart .car_clear { padding-right: 100px; line-height: 30px; font-size: 16px; color: red; text-align: right; }
+
+#E_cart .last_total .all_total, #E_cart .car_clear .all_total { float: right; }
+
+#E_cart .car_clear button { color: #fff; padding: 3px 6px; text-align: center; background: red; }

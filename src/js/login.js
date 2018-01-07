@@ -23,11 +23,6 @@ require(['config'],function(){
                         }else{
                              $('.ts_user').html('!输入账号有误');
                         }
-                        /*if(res=='fail'){
-                           $('.ts_user').html('!此用户名已被注册'); 
-                        }else{
-                            $('.ts_user').html(''); 
-                        }*/
                     }
                 })
             }
@@ -57,16 +52,11 @@ require(['config'],function(){
                         },
                     success:function(res){
                         if(res=='ok'){
-                            // $('.ts_user').html('！你好'); 
+                            sessionStorage.setItem('username', $username);
                             location.href='../index.html'
                         }else{
                              $('.ts_user').html('输入密码有误');
                         }
-                        /*if(res=='fail'){
-                           $('.ts_user').html('!此用户名已被注册'); 
-                        }else{
-                            $('.ts_user').html(''); 
-                        }*/
                     }
                 })
         })
