@@ -79,7 +79,7 @@ require(['config'],function(){
                    
                     /*------------------点击加入购物车-------------*/
                         /*----将qty转为id---*/
-                    console.log($userName);
+                   /* console.log($userName);*/
                     var idArr=[];
                     $('.btn_cart').on('click',function(){
                         idArr=[];
